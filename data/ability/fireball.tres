@@ -1,0 +1,23 @@
+[gd_resource type="Resource" load_steps=2 format=2]
+
+[sub_resource type="GDScript" id=1]
+script/source = "tool
+extends Resource
+class_name UnitAbilitySchema
+
+
+const TagsEnum = preload(\"res://enums/tags_enum.gd\")
+
+export(String) var name
+export(String) var description
+
+export(Array, TagsEnum.Tags) var tags
+export(Array, Resource) var modifiers
+"
+
+[resource]
+script = SubResource( 1 )
+name = ""
+description = ""
+tags = [  ]
+modifiers = [ null ]
