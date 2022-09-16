@@ -10,5 +10,3 @@ var unit_id = get_instance_id()
 
 func _ready():
 	pass
-
-

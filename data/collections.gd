@@ -1,7 +1,12 @@
 extends Node
 
 enum AbilityEnum {
+	TEST
+}
 
+enum AttributeEnum {
+	HEALTH_MAX,
+	MANA_MAX
 }
 
 enum BehaviorEnum {
@@ -14,7 +19,7 @@ enum JobEnum {
 	WIZARD
 }
 
-enum AttributeEnum {
+enum ResourceEnum {
 	HEALTH,
 	MANA
 }

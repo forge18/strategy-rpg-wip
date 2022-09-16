@@ -35,6 +35,16 @@ _global_script_classes=[ {
 "path": "res://systems/modifier/condition/conditions_system.gd"
 }, {
 "base": "Resource",
+"class": "ResourceSchema",
+"language": "GDScript",
+"path": "res://data/resource/schema/resource_schema.gd"
+}, {
+"base": "Node",
+"class": "UnitFactory",
+"language": "GDScript",
+"path": "res://prefabs/unit/unit_factory.gd"
+}, {
+"base": "Resource",
 "class": "UnitJobSchema",
 "language": "GDScript",
 "path": "res://data/job/schema/unit_job_schema.gd"
@@ -50,6 +60,8 @@ _global_script_class_icons={
 "AttributeSchema": "",
 "Blackboard": "",
 "ConditionSystem": "",
+"ResourceSchema": "",
+"UnitFactory": "",
 "UnitJobSchema": "",
 "UnitSchema": ""
 }

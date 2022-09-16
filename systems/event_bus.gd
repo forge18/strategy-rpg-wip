@@ -9,3 +9,7 @@ signal blackboard_value_changed
 signal modifier_added
 signal modifier_calculated
 signal modifier_removed
+
+
+#Resource Signals
+signal resource_max_changed

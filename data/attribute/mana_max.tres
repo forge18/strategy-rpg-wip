@@ -4,3 +4,10 @@
 
 [resource]
 script = ExtResource( 1 )
+name = "mana_max"
+value_type = 0
+base_value = 0
+min_value = 0
+max_value = 0
+modifier_value = 0
+current_value = 0

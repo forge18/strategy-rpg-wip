@@ -1,14 +1,14 @@
 extends Resource
 class_name AttributeSchema
 
-const data_type_enum = preload("res://systems/modifier/enums/attribute_data_types_enum.gd")
-const operator_enum = preload("res://systems/modifier/enums/operators_enum.gd")
-const value_type_enum = preload("res://systems/modifier/enums/attribute_value_types_enum.gd")
+const AttributeDataTypeEnum= preload("res://systems/modifier/enums/attribute_data_types_enum.gd").AttributeDataType
+const OperatorEnum = preload("res://systems/modifier/enums/operators_enum.gd").Operator
+const AttributeValueTypeEnum = preload("res://systems/modifier/enums/attribute_value_types_enum.gd").AttributeValueType
 
 var conditions_system = load("res://systems/modifier/condition/conditions_system.gd").new()
 
 export(String) var name: String
-export(data_type_enum.AttributeDataType) var value_type: int
+export(AttributeDataTypeEnum) var value_type: int
 export(int) var base_value: int
 export(int) var min_value: int
 export(int) var max_value: int
@@ -35,13 +35,13 @@ func _calculate_modifier_value():
 
 		if is_passing:
 			match modifier["operator"]:
-				operator_enum.Operator.ADD:
+				OperatorEnum.ADD:
 					new_value += modifier["value"]
-				operator_enum.Operator.SUBTRACT:
+				OperatorEnum.SUBTRACT:
 					new_value -= modifier["value"]
-				operator_enum.Operator.MULTIPLY:
+				OperatorEnum.MULTIPLY:
 					new_value *= modifier["value"]
-				operator_enum.Operator.DIVIDE:
+				OperatorEnum.DIVIDE:
 					new_value /= modifier["value"]
 
 	modifier_value = new_value
@@ -60,46 +60,46 @@ func _advance_duration(modifier_id: int):
 
 func add(value_type: int, value: int):
 	match value_type:
-		value_type_enum.AttributeValueType.BASE:
+		AttributeValueTypeEnum.BASE:
 			base_value += value
-		value_type_enum.AttributeValueType.CURRENT:
+		AttributeValueTypeEnum.CURRENT:
 			current_value += value
-		value_type_enum.AttributeValueType.MAX:
+		AttributeValueTypeEnum.MAX:
 			max_value += value
-		value_type_enum.AttributeValueType.MIN:
+		AttributeValueTypeEnum.MIN:
 			min_value += value
 
 func subtract(value_type: int, value: int):
 	match value_type:
-		value_type_enum.AttributeValueType.BASE:
+		AttributeValueTypeEnum.BASE:
 			base_value -= value
-		value_type_enum.AttributeValueType.CURRENT:
+		AttributeValueTypeEnum.CURRENT:
 			current_value =- value
-		value_type_enum.AttributeValueType.MAX:
+		AttributeValueTypeEnum.MAX:
 			max_value -= value
-		value_type_enum.AttributeValueType.MIN:
+		AttributeValueTypeEnum.MIN:
 			min_value -= value
 
 func multiply(value_type: int, value: int):
 	match value_type:
-		value_type_enum.AttributeValueType.BASE:
+		AttributeValueTypeEnum.BASE:
 			base_value *= value
-		value_type_enum.AttributeValueType.CURRENT:
+		AttributeValueTypeEnum.CURRENT:
 			current_value *= value
-		value_type_enum.AttributeValueType.MAX:
+		AttributeValueTypeEnum.MAX:
 			max_value *= value
-		value_type_enum.AttributeValueType.MIN:
+		AttributeValueTypeEnum.MIN:
 			min_value *= value
 
 func divide(value_type: int, value: int):
 	match value_type:
-		value_type_enum.AttributeValueType.BASE:
+		AttributeValueTypeEnum.BASE:
 			base_value /= value
-		value_type_enum.AttributeValueType.CURRENT:
+		AttributeValueTypeEnum.CURRENT:
 			current_value /= value
-		value_type_enum.AttributeValueType.MAX:
+		AttributeValueTypeEnum.MAX:
 			max_value /= value
-		value_type_enum.AttributeValueType.MIN:
+		AttributeValueTypeEnum.MIN:
 			min_value /= value
 
 
