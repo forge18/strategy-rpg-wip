@@ -1,5 +1,5 @@
 extends Resource
-class_name ResourceSchema
+class_name ReserveSchema
 
 
 export(String) var name: String
@@ -9,10 +9,10 @@ export(int) var max_value: int
 func _ready():
 	EventBus.connect("resource_max_changed", self, "_on_EventBus_resource_max_changed")
 
-func damage(amount: int):
+func decrease(amount: int):
 	current_value -= amount
 
-func heal(amount: int):
+func increase(amount: int):
 	current_value += amount
 
 func reset():

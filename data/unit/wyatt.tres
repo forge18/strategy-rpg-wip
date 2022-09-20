@@ -7,4 +7,3 @@ script = ExtResource( 1 )
 name = ""
 description = ""
 job = 0
-behavior = 0

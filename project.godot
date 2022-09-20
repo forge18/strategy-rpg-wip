@@ -35,9 +35,9 @@ _global_script_classes=[ {
 "path": "res://systems/modifier/condition/conditions_system.gd"
 }, {
 "base": "Resource",
-"class": "ResourceSchema",
+"class": "ReserveSchema",
 "language": "GDScript",
-"path": "res://data/resource/schema/resource_schema.gd"
+"path": "res://data/reserve/schema/reserve_schema.gd"
 }, {
 "base": "Node",
 "class": "UnitFactory",
@@ -60,7 +60,7 @@ _global_script_class_icons={
 "AttributeSchema": "",
 "Blackboard": "",
 "ConditionSystem": "",
-"ResourceSchema": "",
+"ReserveSchema": "",
 "UnitFactory": "",
 "UnitJobSchema": "",
 "UnitSchema": ""

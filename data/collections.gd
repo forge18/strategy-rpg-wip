@@ -1,60 +1,32 @@
 extends Node
 
-enum AbilityEnum {
-	TEST
+
+enum CollectionsEnum {
+	ABILITY,
+	ATTRIBUTE,
+	JOB,
+	RESERVE,
+	UNIT
 }
 
-enum AttributeEnum {
-	HEALTH_MAX,
-	MANA_MAX
+const collection_enums: Dictionary = {
+	CollectionsEnum.ABILITY: preload("res://data/ability/enums/ability_enum.gd").AbilityEnum,
+	CollectionsEnum.ATTRIBUTE: preload("res://data/attribute/enums/attribute_enum.gd").AttributeEnum,
+	CollectionsEnum.JOB: preload("res://data/job/enums/job_enum.gd").JobEnum,
+	CollectionsEnum.RESERVE: preload("res://data/reserve/enums/reserve_enum.gd").ReserveEnum,
+	CollectionsEnum.UNIT: preload("res://data/unit/enums/unit_enum.gd").UnitEnum
 }
 
-enum BehaviorEnum {
-
+const collections: Dictionary = {
+	CollectionsEnum.ABILITY: preload("res://data/ability/loader/ability_loader.gd").Ability,
+	CollectionsEnum.ATTRIBUTE: preload("res://data/attribute/loader/attribute_loader.gd").Attribute,
+	CollectionsEnum.JOB: preload("res://data/job/loader/job_loader.gd").Job,
+	CollectionsEnum.RESERVE: preload("res://data/reserve/loader/reserve_loader.gd").Reserve,
+	CollectionsEnum.UNIT: preload("res://data/unit/loader/unit_loader.gd").Unit
 }
 
-enum JobEnum {
-	KNIGHT,
-	ROGUE,
-	WIZARD
-}
+func get_collection_enum(collection_id: int):
+	return collection_enums[collection_id]
 
-enum ResourceEnum {
-	HEALTH,
-	MANA
-}
-
-enum UnitEnum {
-	SALLY,
-	TIM,
-	WYATT
-}
-
-##########################################################
-
-const Ability: Dictionary = {
-
-}
-
-const Behavior: Dictionary = {
-
-}
-
-const Job: Dictionary = {
-	JobEnum.KNIGHT: preload("res://data/job/knight.tres"),
-	JobEnum.ROGUE: preload("res://data/job/rogue.tres"),
-	JobEnum.WIZARD: preload("res://data/job/wizard.tres")
-}
-
-const Attribute: Dictionary = {
-	AttributeEnum.HEALTH: preload("res://data/attribute/health.tres"),
-	AttributeEnum.MANA: preload("res://data/attribute/mana.tres")
-}
-
-const Unit: Dictionary = {
-	UnitEnum.SALLY: preload("res://data/unit/sally.tres"),
-	UnitEnum.TIM: preload("res://data/unit/tim.tres"),
-	UnitEnum.WYATT: preload("res://data/unit/wyatt.tres")
-}
-
-
+func get_entity_from_collection(collection_id: int, entity_id: int) -> Resource:
+	return collections[collection_id][entity_id]	
